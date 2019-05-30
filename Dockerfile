@@ -16,3 +16,5 @@ RUN apk add -U python3 bash ca-certificates && \
     ln -s /usr/bin/python3 /usr/bin/python
 COPY --from=0 /usr/local/bin/helm /usr/local/bin/helm
 COPY --from=1 /usr/local/bin/kubectl /usr/local/bin/kubectl
+RUN adduser -D sp
+USER sp
